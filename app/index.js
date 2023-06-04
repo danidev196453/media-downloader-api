@@ -9,8 +9,12 @@ Jika minat, silahkan hubungi: 62 895 1254 5999
 */
 const express = require('express')
 const app = express()
+const cors = require('cors')
+const secure = require('ssl-express-www')
 const apiRoute = require('./route/api.js')
 
+app.use(cors())
+app.use(secure)
 app.set("json spaces", 2)
 
 app.get('/', function (req, res) {
